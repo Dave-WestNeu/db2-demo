@@ -1,0 +1,7 @@
+name: db2_demo
+hooks:
+  postprovision:
+    shell: sh
+    run: ./scripts/postprovision.sh
+    interactive: true
+    continue_on_error: false
