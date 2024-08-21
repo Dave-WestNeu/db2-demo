@@ -4,7 +4,7 @@ metadata:
   name: db2-service
   namespace: default
 spec:
-  type: LoadBalancer:po
+  type: LoadBalancer
   selector:
     app: db2
   ports:
