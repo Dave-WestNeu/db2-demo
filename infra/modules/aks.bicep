@@ -2,7 +2,7 @@ param tags object
 param location string
 param rgName string
 @description('The name of the Managed Cluster resource.')
-param clusterName string = 'aks101cluster'
+param clusterName string = 'akscluster'
 
 param linuxAdminUsername string = 'dwest'
 param sshRSAPublicKey string = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCOKPVnzSpTeQ2nx0HRZ3tu4DCRUIcjmme4B7SJUJQRzKLQgeAN3gsqZeQfY5NkCzxgt/1k7RMMHgc+I6nCHd/KCeEa55Kk2QToPa9ZgNVJcWUXxZ0BwDcMCEwAPm/G/N93AjZolJe4AKPtu0NnYm0QGKGbk0W/aXn4GZ2k2NJNDDSpPR5ZAiONsCm7LryE79nqhmbvuFl+2pTTi9Bsvnrf5RXiCADxpFXL+kpGWNBaORCaCQFKHVvXeJe9W0udmAFXrOU5H8oG0W6dLVeQzGa0Bh2CK8ITvd+QQ66Xpfb+paYExLUZHo6BBE+QOd9HRNG6B4urQ3silm78nNTgVcaV'

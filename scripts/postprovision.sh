@@ -3,6 +3,17 @@
 # safe bash boilerplate
 set -euo pipefail
 
+echo "please log in to az"
+az login
+
+echo "installing aks cli, kubectl, etc"
+az aks install-cli
+
+echo "getting aks credentials"
+az aks get-credentials --resource-group myResourceGroup --name akscluster
+
+sleep 3
+
 kubectl apply -f manifests/db2.yaml
 kubectl apply -f manifests/db2-service.yaml
 

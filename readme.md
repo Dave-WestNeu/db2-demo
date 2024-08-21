@@ -11,6 +11,7 @@ Azure Developer CLI (`azd`)
 
 ## Stand up infra
 ```
+$ az login # for some of the postprovisioning
 $ azd auth login
 $ azd init # (select use existing code and make an env called `sbx` or whatever you choose)
 $ azd up
