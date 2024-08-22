@@ -76,36 +76,36 @@ resource sp 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-07-31-preview
   tags: tags
 }
 
-resource aksCluster 'Microsoft.ContainerService/managedClusters@2024-02-01' = {
-  name: clusterName
-  location: location
-  identity: {
-    type: 'SystemAssigned'
-  }
-  properties: {
-    dnsPrefix: clusterName
-    agentPoolProfiles: [
-      {
-        name: 'agentpool'
-        osDiskSizeGB: 30
-        count: 1
-        vmSize: 'Standard_B2s'
-        osType: 'Linux'
-        mode: 'System'
-      }
-    ]
-    linuxProfile: {
-      adminUsername: linuxAdminUsername
-      ssh: {
-        publicKeys: [
-          {
-            keyData: sshRSAPublicKey
-          }
-        ]
-      }
-    }
-  }
-  tags: tags
+resource aksCluster 'Microsoft.ContainerService/managedClusters@2024-02-01' existing = {
+  name: 'db2-test'
+  // location: location
+  // identity: {
+  //   type: 'SystemAssigned'
+  // }
+  // properties: {
+  //   dnsPrefix: clusterName
+  //   agentPoolProfiles: [
+  //     {
+  //       name: 'agentpool'
+  //       osDiskSizeGB: 30
+  //       count: 1
+  //       vmSize: 'Standard_B2s'
+  //       osType: 'Linux'
+  //       mode: 'System'
+  //     }
+  //   ]
+  //   linuxProfile: {
+  //     adminUsername: linuxAdminUsername
+  //     ssh: {
+  //       publicKeys: [
+  //         {
+  //           keyData: sshRSAPublicKey
+  //         }
+  //       ]
+  //     }
+  //   }
+  // }
+  // tags: tags
 }
 
 // deploy pod

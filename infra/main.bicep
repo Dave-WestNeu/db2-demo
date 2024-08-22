@@ -1,18 +1,14 @@
-targetScope = 'subscription'
-
 param location string
 
 param tags object = {
-  Owner: 'Dave.West@neudesic.com'
+  Owner: 'ram.mudalagiri@neudesic.com'
   Purpose: 'DB2 Container'
 }
 
 // create azure resource group
-resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
-  name: 'myResourceGroup'
-  location: location
-  tags: tags
-}
+//resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' existing = {
+//  name: 'rg-openaistudio-demo-01'
+//}
 
 // module azureContainerInstance 'modules/azureContainerInstance.bicep' = {
 //   name: 'azureContainerInstance'
@@ -25,9 +21,9 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 
 module aks 'modules/aks.bicep' = {
   name: 'aks'
-  scope: rg
+  scope: resourceGroup('rg-openaistudio-demo-01')
   params: {
-    rgName: rg.name
+    rgName: 'rg-openaistudio-demo-01'
     location: location
     tags: tags
   }

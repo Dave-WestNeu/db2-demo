@@ -19,13 +19,11 @@ spec:
       value: 'Y'
     - name: DB2INST1_PASSWORD
       value: 'your_password'
-    - name: DBNAME
-      value: 'sample'
     - name: LICENSE
       value: 'accept'
     - name: AUTOCONFIG
       value: 'true'
-    - name: TO_CREATE_SAMPLEDB
+    - name: SAMPLEDB
       value: 'true'
     securityContext:
       privileged: true

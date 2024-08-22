@@ -10,7 +10,7 @@ echo "installing aks cli, kubectl, etc"
 az aks install-cli
 
 echo "getting aks credentials"
-az aks get-credentials --resource-group myResourceGroup --name akscluster
+az aks get-credentials --resource-group rg-openaistudio-demo-01 --name db2-test
 
 sleep 3
 
