@@ -1,3 +1,3 @@
 using 'main.bicep'
 
-param location = readEnvironmentVariable('LOCATION')
+param location = readEnvironmentVariable('AZURE_LOCATION')
