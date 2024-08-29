@@ -14,6 +14,7 @@ az aks get-credentials --resource-group rg-openaistudio-demo-01 --name db2-test
 
 sleep 3
 
+kubectl delete -f manifests/db2.yaml || true
 kubectl apply -f manifests/db2.yaml
 kubectl apply -f manifests/db2-service.yaml
 
